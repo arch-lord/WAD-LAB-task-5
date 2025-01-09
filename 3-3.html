@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Calculat0r</title>
+</head>
+<body bgcolor="#FFFF00">
+    <h1 style="color:#8A2BE2;">Cusio</h1>
+    <form name="calciForm">
+        <input type="text" name="n1" placeholder="Enter first number">
+        <select name="o">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name="n2" placeholder="Enter second number">
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <p id="r"></p>
+
+    <script>
+        function calculate() {
+            var form = document.calciForm;
+            var n1 = form.n1.value;
+            var n2 = form.n2.value;
+            var o = form.o.value;
+            var r = 0;
+
+            if(o==="+") 																					    {
+                r=Number(n1) + Number(n2);
+            } 
+	    else if (o === "-") 
+            {
+                r=Number(n1) - Number(n2);
+            } 
+	   else if (o === "*") 
+            {
+                r=Number(n1) * Number(n2);
+            } 
+           else if (o === "/") 
+                {
+                if(n2 != 0) {
+                    r = Number(n1) / Number(n2);
+                } else {
+                    r = "Cannot divide by zero!";
+                }
+            }
+
+            document.getElementById("r").innerText = "Result: " + r;
+        }
+    </script>
+</body>
+</html>

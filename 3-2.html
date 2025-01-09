@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Quizezy</title>
+</head>
+<body bgcolor="#FFFF00">
+    <h1 style="color:#8A2BE2;">Quizezy</h1>
+    <form name="quizForm">
+        <label>What is the short form of 'UNIFORM RESOURCE LOCATOR'?</label><br><br>
+        <input type="text" name="ans" placeholder="Enter your answer">
+        <button type="button" onclick="checkAns()">Submit</button>
+    </form>
+    <p id="f"></p>
+
+    <script>
+        function checkAns() {
+            var form = document.quizForm;
+            var answer = form.ans.value.trim();
+            var f = "";
+
+            if (answer.toUpperCase() === "URL") {
+                f = "Correct!";
+            } else {
+                f = "Incorrect. The correct answer is URL.";
+            }
+
+            document.getElementById("f").innerText = f;
+        }
+    </script>
+</body>
+</html>
